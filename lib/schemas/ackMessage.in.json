@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "queueName": {
+            "required": true,
+            "type": "string"
+        },
+        "queueMessageId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

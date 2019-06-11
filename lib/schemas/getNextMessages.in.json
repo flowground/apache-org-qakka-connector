@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "queueName": {
+            "required": true,
+            "type": "string"
+        },
+        "count": {
+            "required": false,
+            "type": "string",
+            "default": "1"
+        }
+    }
+}

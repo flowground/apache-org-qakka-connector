@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "queueName": {
+            "required": true,
+            "type": "string"
+        },
+        "confirm": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

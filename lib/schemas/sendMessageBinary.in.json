@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "queueName": {
+            "required": true,
+            "type": "string"
+        },
+        "regions": {
+            "required": false,
+            "type": "string"
+        },
+        "delay": {
+            "required": false,
+            "type": "string"
+        },
+        "expiration": {
+            "required": false,
+            "type": "string"
+        },
+        "contentType": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "items": {
+                "format": "byte",
+                "type": "string"
+            },
+            "type": "array"
+        }
+    }
+}

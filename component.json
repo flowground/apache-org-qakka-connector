@@ -1,0 +1,204 @@
+{
+    "title": "Qakka",
+    "description": "API for Qakka Queue System",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/apache.org/qakka/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://apache.local/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getListOfQueues": {
+            "main": "./lib/actions/getListOfQueues.js",
+            "title": "Get list of all Queues.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getListOfQueues.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createQueue": {
+            "main": "./lib/actions/createQueue.js",
+            "title": "Create new queue.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createQueue.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteQueue": {
+            "main": "./lib/actions/deleteQueue.js",
+            "title": "Delete Queue.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteQueue.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getQueueConfig": {
+            "main": "./lib/actions/getQueueConfig.js",
+            "title": "Get Queue config.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getQueueConfig.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateQueueConfig": {
+            "main": "./lib/actions/updateQueueConfig.js",
+            "title": "Update Queue configuration.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateQueueConfig.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMessageData": {
+            "main": "./lib/actions/getMessageData.js",
+            "title": "Get data associated with a Queue Message.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMessageData.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getNextMessages": {
+            "main": "./lib/actions/getNextMessages.js",
+            "title": "Get next Queue Messages from a Queue",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getNextMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "sendMessageBinary": {
+            "main": "./lib/actions/sendMessageBinary.js",
+            "title": "Send Queue Message with a binary data (blob) payload.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/sendMessageBinary.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ackMessage": {
+            "main": "./lib/actions/ackMessage.js",
+            "title": "Acknowledge that Queue Message has been processed.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ackMessage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "status": {
+            "main": "./lib/actions/status.js",
+            "title": "Status of webapp.",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/status.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
